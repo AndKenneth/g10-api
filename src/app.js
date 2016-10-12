@@ -15,24 +15,17 @@ app.get('/item/:name', (req, res) => {
 
 // List all items
 app.get('/items', (req, res) => {
-  item.find((err, items) => res.send(items));
+  item.find((err, items) => res.send({ items }));
 });
 
 // Find item by category name
 app.get('/items/:category', (req, res) => {
-  category.find({ name: req.params.category }, (err, categories) => {
-    if (categories.length) {
-      res.status(404).send('Sorry, I can\'t find that one!');
-    } else {
-      item.find({ category: req.params.category }, (err2, items) => res.send(items));
-    }
-  });
+  item.find({ category }, (err, items) => res.send({ items }));
 });
-
 
 // Get all category names
 app.get('/categories', (req, res) => {
-  category.find((err, categories) => res.send(categories));
+  item.find({}, (err, items) => res.send({ categories: items.map(i => i.category) }));
 });
 
 app.use(express.static('public'));
