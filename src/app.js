@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const unique = require('array-unique').immutable;
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.get('/items/:category', (req, res) => {
 
 // Get all category names
 app.get('/categories', (req, res) => {
-  item.find({}, (err, items) => res.send({ categories: items.map(i => i.category) }));
+  item.find({}, (err, items) => res.send({ categories: unique(items.map(i => i.category)) }));
 });
 
 app.use(express.static('public'));
