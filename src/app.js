@@ -8,11 +8,6 @@ mongoose.connect('mongodb://localhost:27017/test');
 
 const Item = require('./models/item.js');
 
-// Find a single item from the collection by name.
-app.get('/item/:name', (req, res) => {
-  Item.findOne({ name: req.params.name }, (err, theItem) => res.send(theItem));
-});
-
 // List all items
 app.get('/items', (req, res) => {
   Item.find((err, items) => res.send({ response: items }));
