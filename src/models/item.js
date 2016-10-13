@@ -86,6 +86,14 @@ Item.remove({});
     notes: 'The hawksbill sea turtle is a critically endangered sea turtle belonging to the family Cheloniidae. It is the only extant species in the genus Eretmochelys.',
     dateAdded: '03 Sep 2003',
   },
+  {
+    name: 'Lion Skull',
+    category: { title: 'Marine' },
+    description: 'A lion skull',
+    prefabName: 'lion_skull',
+    notes: 'The lion is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa.',
+    dateAdded: '03 Sep 2003',
+  },
 ].forEach((seedItem) => {
   Item.find({ name: seedItem.name }, (err, items) => {
     if (!items.length) {
