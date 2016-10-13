@@ -50,6 +50,8 @@ itemSchema.virtual('color').get(function () {
 
 const Item = mongoose.model('item', itemSchema);
 
+Item.remove({});
+
 [
   {
     name: 'Sir Edmund Hillaries Ice Axe',
