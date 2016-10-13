@@ -95,6 +95,14 @@ Item.remove({});
     notes: 'The lion is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa.',
     dateAdded: '21 Jan 1993',
   },
+  {
+    name: 'Little blue penguin',
+    category: { title: 'Marine' },
+    description: 'A small blue penuin',
+    prefabName: 'penguin',
+    notes: 'The little penguin (Eudyptula minor) is the smallest species of penguin. It grows to an average of 33 cm (13 in) in height and 43 cm (17 in) in length, though specific measurements vary by subspecies.[2][3] It is found on the coastlines of southern Australia and New Zealand, with possible records from Chile.',
+    dateAdded: '22 Feb 2013',
+  },
 ].forEach((seedItem) => {
   Item.find({ name: seedItem.name }, (err, items) => {
     if (!items.length) {
