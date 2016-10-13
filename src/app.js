@@ -15,12 +15,12 @@ app.get('/item/:name', (req, res) => {
 
 // List all items
 app.get('/items', (req, res) => {
-  Item.find((err, items) => res.send({ items }));
+  Item.find((err, items) => res.send({ response: items }));
 });
 
 // Find item by category name
 app.get('/items/:category', (req, res) => {
-  Item.find({ 'category.title': req.params.category }, (err, items) => res.send({ items }));
+  Item.find({ 'category.title': req.params.category }, (err, items) => res.send({ response: items }));
 });
 
 // Get all category names
@@ -30,7 +30,7 @@ app.get('/categories', (req, res) => {
       return { color: i.category.color, title: i.category.title };
     });
     categories = unique(categories);
-    res.send(categories);
+    res.send({ response: categories });
   });
 });
 
