@@ -70,13 +70,14 @@ Item.remove({});
   },
   {
     name: 'Moa Skull',
-    category: { title: 'bird' },
+    category: { title: 'Skeleton' },
     description: 'A moa skull',
     museumIndex: 'collectionsonline-2016-08-30-1',
     museumId: 'http://api.aucklandmuseum.com/id/humanhistory/object/64501',
     dateAdded: '02 Nov 1999',
     isTaonga: false,
     notes: 'The moa were nine species of flightless birds endemic to New Zealand. The two largest species, Dinornis robustus and Dinornis novaezelandiae, reached about 3.6 m in height with neck outstretched, and weighed about 230 kg.',
+    prefabName: 'moaskull',
   },
   {
     name: 'Hawkbill Sea Turtle',
@@ -88,11 +89,11 @@ Item.remove({});
   },
   {
     name: 'Lion Skull',
-    category: { title: 'Marine' },
+    category: { title: 'Skeleton' },
     description: 'A lion skull',
     prefabName: 'lionskull',
     notes: 'The lion is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa.',
-    dateAdded: '03 Sep 2003',
+    dateAdded: '21 Jan 1993',
   },
 ].forEach((seedItem) => {
   Item.find({ name: seedItem.name }, (err, items) => {
