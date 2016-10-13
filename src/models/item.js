@@ -70,7 +70,7 @@ Item.remove({});
   },
   {
     name: 'Moa Skull',
-    category: { title: 'Skeleton' },
+    category: { title: 'Mammals' },
     description: 'A moa skull',
     museumIndex: 'collectionsonline-2016-08-30-1',
     museumId: 'http://api.aucklandmuseum.com/id/humanhistory/object/64501',
@@ -89,7 +89,7 @@ Item.remove({});
   },
   {
     name: 'Lion Skull',
-    category: { title: 'Skeleton' },
+    category: { title: 'Mammals' },
     description: 'A lion skull',
     prefabName: 'lionskull',
     notes: 'The lion is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa.',
