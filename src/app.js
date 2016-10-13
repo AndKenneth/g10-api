@@ -7,7 +7,6 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/test');
 
 const Item = require('./models/Item.js');
-// const Category = require('./models/category.js');
 
 // Find a single item from the collection by name.
 app.get('/item/:name', (req, res) => {
