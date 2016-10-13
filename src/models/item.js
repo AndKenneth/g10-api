@@ -49,6 +49,15 @@ itemSchema.virtual('category.color').get(function () {
   return '00000'.substring(0, 6 - c.length) + c;
 });
 
+itemSchema.virtual('color').get(function () {
+  let hash = 0;
+  [...this.name].forEach((letter) => {
+    hash = letter.charCodeAt(0) + ((hash << 5) - hash);
+  });
+  const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+  return '00000'.substring(0, 6 - c.length) + c;
+});
+
 const Item = mongoose.model('item', itemSchema);
 
 [
