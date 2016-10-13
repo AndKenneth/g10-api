@@ -71,4 +71,12 @@ module.exports = [{
   notes: 'Maori Bone and Greenstone Pendants carved in traditional designs carry a spiritual meaning as well',
   dateAdded: '22 Feb 2013',
 },
+{
+  name: 'Giant Spider Crab',
+  category: { title: 'Marine' },
+  description: 'a giant crab',
+  prefabName: 'crab',
+  notes: 'The giant spider crabs migrate up to a depth of around 50 metres (160 ft) during breeding season.',
+  dateAdded: '22 Feb 2013',
+},
 ];
