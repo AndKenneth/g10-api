@@ -29,16 +29,6 @@ const itemSchema = new Schema({
 }, schemaOptions);
 
 /* eslint no-bitwise: ["error", { "allow": ["<<", "&"] }] */
-// itemSchema.virtual('category.color').get(() => {
-//   // return this.category.title;
-//   // let hash = 0;
-//   // [...title].forEach((letter) => {
-//   //   hash = letter.charCodeAt(0) + ((hash << 5) - hash);
-//   // });
-//   // const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-//   // return '00000'.substring(0, 6 - c.length) + c;
-//   return this.category.title;
-// });
 
 itemSchema.virtual('category.color').get(function () {
   let hash = 0;
