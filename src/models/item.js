@@ -90,7 +90,7 @@ Item.remove({});
     name: 'Lion Skull',
     category: { title: 'Marine' },
     description: 'A lion skull',
-    prefabName: 'lion_skull',
+    prefabName: 'lionskull',
     notes: 'The lion is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa.',
     dateAdded: '03 Sep 2003',
   },
