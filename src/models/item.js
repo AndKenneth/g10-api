@@ -1,9 +1,20 @@
 const mongoose = require('mongoose');
 
-const itemSchema = {
+const Schema = mongoose.Schema;
+
+const schemaOptions = {
+  toObject: {
+    virtuals: true,
+  },
+  toJSON: {
+    virtuals: true,
+  },
+};
+
+const itemSchema = new Schema({
   name: String,
   type: String,
-  category: String,
+  category: { title: String },
   description: String,
   modelUrl: String,
   _index: String,
@@ -15,7 +26,28 @@ const itemSchema = {
   notes: String,
   timePeriod: String,
   place: String,
-};
+}, schemaOptions);
+
+/* eslint no-bitwise: ["error", { "allow": ["<<", "&"] }] */
+// itemSchema.virtual('category.color').get(() => {
+//   // return this.category.title;
+//   // let hash = 0;
+//   // [...title].forEach((letter) => {
+//   //   hash = letter.charCodeAt(0) + ((hash << 5) - hash);
+//   // });
+//   // const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+//   // return '00000'.substring(0, 6 - c.length) + c;
+//   return this.category.title;
+// });
+
+itemSchema.virtual('category.color').get(function () {
+  let hash = 0;
+  [...this.category.title].forEach((letter) => {
+    hash = letter.charCodeAt(0) + ((hash << 5) - hash);
+  });
+  const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+  return '00000'.substring(0, 6 - c.length) + c;
+});
 
 const Item = mongoose.model('item', itemSchema);
 
@@ -23,7 +55,7 @@ const Item = mongoose.model('item', itemSchema);
   {
     name: 'Sir Edmund Hillaries Ice Axe',
     type: 'ecrm:E22_Man-Made_Object',
-    category: 'mountain climbing',
+    category: { title: 'mountain climbing' },
     description: 'Ice axe used by Sir Edmund Hillary on first ascent of Everest, 29 May 1953\nmarkings: Claudius Simond / CHAMONIX MONT BLANC',
     modelUrl: null,
     museumIndex: 'collectionsonline-2016-08-30-1',
@@ -38,7 +70,7 @@ const Item = mongoose.model('item', itemSchema);
   },
   {
     name: 'Moa Skull',
-    category: 'Bird',
+    category: { title: 'bird' },
     description: 'A moa skull',
     museumIndex: 'collectionsonline-2016-08-30-1',
     museumId: 'http://api.aucklandmuseum.com/id/humanhistory/object/64501',

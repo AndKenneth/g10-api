@@ -20,12 +20,18 @@ app.get('/items', (req, res) => {
 
 // Find item by category name
 app.get('/items/:category', (req, res) => {
-  Item.find({ category: req.params.category }, (err, items) => res.send({ items }));
+  Item.find({ 'category.title': req.params.category }, (err, items) => res.send({ items }));
 });
 
 // Get all category names
 app.get('/categories', (req, res) => {
-  Item.find({}, (err, items) => res.send({ categories: unique(items.map(i => i.category)) }));
+  Item.find((err, items) => {
+    let categories = items.map((i) => {
+      return { color: i.category.color, title: i.category.title };
+    });
+    categories = unique(categories);
+    res.send(categories);
+  });
 });
 
 app.use(express.static('public'));
