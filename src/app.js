@@ -6,7 +6,7 @@ const app = express();
 
 mongoose.connect('mongodb://localhost:27017/test');
 
-const Item = require('../src/models/Item.js');
+const Item = require('./models/Item.js');
 
 // Find a single item from the collection by name.
 app.get('/item/:name', (req, res) => {
