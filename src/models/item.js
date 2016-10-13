@@ -105,10 +105,18 @@ Item.remove({});
   },
   {
     name: 'Maxim Mark 1 .303 Heavy Machine Gun',
-    category: { title: 'WW1' },
+    category: { title: 'Artefacts' },
     description: 'A large machine gun',
     prefabName: 'gun',
     notes: 'The Vickers machine gun or Vickers gun is a name primarily used to refer to the water-cooled .303 British (7.7 mm) machine gun produced by Vickers Limited, originally for the British Army. The machine gun typically required a six to eight-man team to operate: one fired, one fed the ammunition, the rest helped to carry the weapon, its ammunition and spare parts.[1] It was in service from before the First World War until the 1960s, with air-cooled versions of it on many Allied World War I fighter aircraft.',
+    dateAdded: '22 Feb 2013',
+  },
+  {
+    name: 'Maōri Pendant',
+    category: { title: 'Artefacts' },
+    description: 'a small pendant',
+    prefabName: 'pendant',
+    notes: 'Maori Bone and Greenstone Pendants carved in traditional designs carry a spiritual meaning as well',
     dateAdded: '22 Feb 2013',
   },
 ].forEach((seedItem) => {
